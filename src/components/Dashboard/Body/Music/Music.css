@@ -1,0 +1,30 @@
+.music {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  background: #181818;
+  width: 100%;
+}
+
+.music:hover {
+  background: #282828;
+}
+
+.music--image {
+  width: 100px;
+}
+
+.music--image img {
+  width: 70%;
+}
+
+.music--info h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.music--info p {
+  margin: 0;
+  color: #b3b4b4;
+}

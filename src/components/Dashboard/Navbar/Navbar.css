@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.navbar--btn {
+  background: #000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar--btn--name {
+  padding-right: 15px;
+}
+
+.navbar--btn--image {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}

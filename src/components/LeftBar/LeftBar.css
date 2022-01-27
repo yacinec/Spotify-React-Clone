@@ -1,0 +1,46 @@
+.leftbar {
+  width: 250px;
+  background: #000;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.leftbar--title {
+  color: #fff;
+}
+
+.navigation,
+.playlists--actions,
+.playlist--tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.navigation,
+.playlists,
+.playlist--tracks {
+  margin-top: 50px;
+}
+
+.playlists--actions--link,
+.playlist--tracks--link,
+.navigation--link {
+  display: block;
+  color: #b9bbbe;
+  text-decoration: none;
+}
+
+.playlists--actions--link:hover,
+.playlist--tracks--link:hover,
+.navigation--link:hover {
+  color: #fff;
+}
+
+.playlist--tracks {
+  max-height: 170px;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}

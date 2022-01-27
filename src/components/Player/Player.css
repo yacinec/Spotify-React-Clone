@@ -1,0 +1,15 @@
+.player {
+  background: rgb(23, 24, 24);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 24, 24, 1) 39%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.__q1q4n7 {
+  width: auto !important;
+}

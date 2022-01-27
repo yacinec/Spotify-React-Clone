@@ -1,0 +1,12 @@
+.home {
+  margin-top: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.artists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}

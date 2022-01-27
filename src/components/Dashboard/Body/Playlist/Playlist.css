@@ -1,0 +1,11 @@
+.playlist {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.playlist--title {
+  color: #fff;
+  font-size: 2em;
+}
