@@ -40,6 +40,7 @@ function App() {
   const [tracks, setTracks] = useState([]);
   const [tracksFlow, setTracksFlow] = useState([]);
   const [page, setPage] = useState('home');
+  const [search, setSearch] = useState([]);
 
   const current_url = new URLSearchParams(window.location.search);
 
@@ -202,7 +203,7 @@ function App() {
 
           if (error === 'Invalid authorization code') {
             getCode();
-          } else if (error === 'ffezrf') {
+          } else {
             getRefreshToken();
             getProfil();
           }
@@ -300,6 +301,46 @@ function App() {
     }
   };
 
+  const handleSearchingSong = (trackName) => {
+    if (trackName === '') {
+      setSearch([]);
+      return;
+    }
+    const url =
+      'https://api.spotify.com/v1/search?q=' + trackName + '&type=track';
+    if (accessToken !== '') {
+      axios({
+        method: 'get',
+        url: url,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + accessToken,
+        },
+      })
+        .then((res) => {
+          let newArray = [];
+          res.data.tracks.items.map((track) => {
+            newArray.push({
+              title: track.name,
+              artist: track.artists[0].name,
+              uri: track.uri,
+              image: track.album.images[0].url,
+            });
+          });
+          setSearch(newArray);
+        })
+        .catch((err) => {
+          const error = err.response.data;
+          if (error === 'Invalid authorization code') {
+            getCode();
+          } else if (error === 'ffezrf') {
+            getRefreshToken();
+          }
+        });
+    }
+  };
+
   useEffect(() => {
     if (
       currentUser !== null &&
@@ -363,6 +404,8 @@ function App() {
           page={page}
           tracks={tracks}
           handleChangeSong={handleChangeSong}
+          handleSearchingSong={handleSearchingSong}
+          search={search}
         />
       </section>
       <section className='bottom'>

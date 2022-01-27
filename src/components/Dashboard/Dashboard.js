@@ -4,6 +4,7 @@ import './Dashboard.css';
 import Navbar from './Navbar/Navbar';
 import Home from './Body/Home/Home';
 import Playlist from './Body/Playlist/Playlist';
+import MusicSearch from './Body/MusicSearch/MusicSearch';
 
 export default function Dashboard(props) {
   const [currentUser, setCurrentUser] = useState(null);
@@ -25,6 +26,13 @@ export default function Dashboard(props) {
       )}
       {topArtists !== null && page === 'home' && (
         <Home topArtists={topArtists} />
+      )}
+      {page === 'search' && (
+        <MusicSearch
+          handleSearchingSong={props.handleSearchingSong}
+          handleChangeSong={props.handleChangeSong}
+          search={props.search}
+        />
       )}
 
       {page === 'playlist' && (
